@@ -5,6 +5,7 @@ import express from "express";
 import db from "./config/db.mjs";
 import authRoutes from "./routes/authRoutes.mjs";
 import productRoutes from "./routes/productRoutes.mjs";
+import cartRoutes from "./routes/cartRoutes.mjs";
 
 const app = express();
 
@@ -19,6 +20,7 @@ await db();
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/products", productRoutes);
+app.use("/api/cart", cartRoutes);
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
